@@ -1,0 +1,56 @@
+@use "header"
+@use "hero"
+@use "mistery"
+@use "farol"
+@use "footer"
+
+@mixin text($fontSize: 22px)
+    font-size: $fontSize
+    color: #fff
+    font-family: "Poppins", sans-serif
+
+    
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    list-style: none
+    text-decoration: none
+
+body
+    background-color: #000
+
+.text
+    @include text
+
+.title
+    
+    @include text(48px)
+
+    &--medium
+        @include text(32px)
+
+    &--small
+        @include text(18px)
+        font-style: italic
+    
+    &--gradient
+        background-size: 100%
+        background-repeat: repeat
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        -moz-background-clip: text
+        -moz-text-fill-color: transparent
+        &--left
+            background-image: linear-gradient(315deg, black, #e49400)
+
+        &--right
+            background-image: linear-gradient(45deg, black, #e49400)
+
+        &--center-up
+            background-image: linear-gradient(180deg, black, #e49400)
+
+        &--center-down
+            background-image: linear-gradient(0deg, black, #e49400)
+
